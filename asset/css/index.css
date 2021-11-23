@@ -319,7 +319,6 @@ a.enter {
     inset 0 0 32px #37f713;
     border: 4px solid #fff;
     border-radius: 15px;
-    animation: ;
 }
 
 @keyframes flashing {
@@ -329,9 +328,9 @@ a.enter {
         box-shadow: 0 0 8px #fff,
         inset 0 0 8px #fff,
         0 0 32px ,
-        inset 0 0 32px ,
+        inset 0 0 32px#37f713 ,
         0 0 64px,
-        inset 0 0 64px;
+        inset 0 0 64px#37f713;
     }
     20%, 34%, 41% {
         text-shadow: none;
