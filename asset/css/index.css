@@ -1,0 +1,312 @@
+@import url('../font/Sprykski.otf');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 0;
+    background: #000000;
+    z-index: -10;
+}
+
+video {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -5;
+    opacity: 0.8;
+    position: relative;
+    pointer-events: none;
+    margin-top: 0;
+
+}
+
+.titre {
+    color: antiquewhite;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+
+}
+
+.alien {
+    color: antiquewhite;
+    position: absolute;
+    top: 15%;
+    left: 25%;
+
+}
+
+.titre span:nth-child(1) {
+    animation: myAnim 0.25s ease 1s 1 normal forwards;
+    position: absolute;
+    opacity: 0;
+
+
+}
+
+.titre span:nth-child(2) {
+    animation: myAnim 0.25s ease 1.5s 1 normal forwards;
+    position: absolute;
+    left: 20px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(3) {
+    animation: myAnim 0.25s ease 2s 1 normal forwards;
+    position: absolute;
+    left: 30px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(4) {
+    animation: myAnim 0.25s ease 2.5s 1 normal forwards;
+    position: absolute;
+    left: 45px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(5) {
+    animation: myAnim 0.25s ease 3s 1 normal forwards;
+    position: absolute;
+    left: 65px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(6) {
+    animation: myAnim 0.25s ease 3.5s 1 normal forwards;
+    position: absolute;
+    left: 80px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(7) {
+    animation: myAnim 0.25s ease 4s 1 normal forwards;
+    position: absolute;
+    left: 95px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(8) {
+    animation: myAnim 0.25s ease 4.5s 1 normal forwards;
+    position: absolute;
+    left: 115px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(9) {
+    animation: myAnim 0.25s ease 5s 1 normal forwards;
+    position: absolute;
+    left: 135px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(10) {
+    animation: myAnim 0.25s ease 5.5s 1 normal forwards;
+    position: absolute;
+    left: 170px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(11) {
+    animation: myAnim 0.25s ease 6s 1 normal forwards;
+    position: absolute;
+    left: 185px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(12) {
+    animation: myAnim 0.25s ease 6.5s 1 normal forwards;
+    position: absolute;
+    left: 205px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(13) {
+    animation: myAnim 0.25s ease 7s 1 normal forwards;
+    position: absolute;
+    left: 240px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(14) {
+    animation: myAnim 0.25s ease 7.5s 1 normal forwards;
+    position: absolute;
+    left: 250px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(15) {
+    animation: myAnim 0.25s ease 8s 1 normal forwards;
+    position: absolute;
+    left: 280px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(16) {
+    animation: myAnim 0.25s ease 8.5s 1 normal forwards;
+    position: absolute;
+    left: 290px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(17) {
+    animation: myAnim 0.25s ease 9s 1 normal forwards;
+    position: absolute;
+    left: 300px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(18) {
+    animation: myAnim 0.25s ease 9.5s 1 normal forwards;
+    position: absolute;
+    left: 315px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(19) {
+    animation: myAnim 0.25s ease 10s 1 normal forwards;
+    position: absolute;
+    left: 330px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(20) {
+    animation: myAnim 0.25s ease 10.5s 1 normal forwards;
+    position: absolute;
+    left: 370px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(21) {
+    animation: myAnim 0.25s ease 11s 1 normal forwards;
+    position: absolute;
+    left: 390px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(22) {
+    animation: myAnim 0.25s ease 11.5s 1 normal forwards;
+    position: absolute;
+    left: 400px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(23) {
+    animation: myAnim 0.25s ease 12s 1 normal forwards;
+    position: absolute;
+    left: 415px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(24) {
+    animation: myAnim 0.25s ease 12.5s 1 normal forwards;
+    position: absolute;
+    left: 450px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(25) {
+    animation: myAnim 0.25s ease 13s 1 normal forwards;
+    position: absolute;
+    left: 470px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(26) {
+    animation: myAnim 0.25s ease 13.5s 1 normal forwards;
+    position: absolute;
+    left: 505px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(27) {
+    animation: myAnim 0.25s ease 14s 1 normal forwards;
+    position: absolute;
+    left: 515px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(28) {
+    animation: myAnim 0.25s ease 14.5s 1 normal forwards;
+    position: absolute;
+    left: 555px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(29) {
+    animation: myAnim 0.25s ease 15s 1 normal forwards;
+    position: absolute;
+    left: 575px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(30) {
+    animation: myAnim 0.25s ease 15.5s 1 normal forwards;
+    position: absolute;
+    left: 590px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(31) {
+    animation: myAnim 0.25s ease 16s 1 normal forwards;
+    position: absolute;
+    left: 605px;
+    opacity: 0;
+
+}
+
+.titre span:nth-child(32) {
+    animation: myAnim 0.25s ease 16.5s 1 normal forwards;
+    position: absolute;
+    left: 620px;
+    opacity: 0;
+
+}
+
+@keyframes myAnim {
+    0% {
+        opacity: 0;
+        transform: translateX(250px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
