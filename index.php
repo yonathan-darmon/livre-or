@@ -10,7 +10,7 @@ session_start()
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="asset/css/index.css">
 
-    <title>accueil</title>
+    <title>index</title>
 </head>
 <body>
 <header>
@@ -25,7 +25,7 @@ session_start()
         <span>l</span><span>i</span><span>v</span><span>r</span><span>e </span><span>d</span><span>'</span><span>o</span><span>r</span>
         <span>d</span><span>e</span> <span>l</span><span>a</span>
         <span>T</span><span>e</span><span>r</span><span>r</span><span>e</span></h1>
-    <a href="#" class="enter">Bienvenue</a>
+    <a href="./php/accueil.php" class="enter">Bienvenue</a>
 
 </main>
 <footer>
