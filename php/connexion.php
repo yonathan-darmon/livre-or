@@ -19,6 +19,7 @@
     <video autoplay muted loop id="myVideo">
         <source src="../asset/video/espace.mov" type="video/mp4">
     </video>
+    <a href="inscription.php">Pas encore inscrit?</a>
 </main>
 <footer>
 
