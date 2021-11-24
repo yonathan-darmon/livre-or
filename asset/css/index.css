@@ -31,6 +31,7 @@ video {
     left: 25%;
     z-index: 2;
 }
+
 .enter:hover {
     color: red;
     box-shadow: 0 0 8px #fff,
@@ -38,7 +39,7 @@ video {
     0 0 32px;
 }
 
-
+/*animation des lettres sur index*/
 .titre span:nth-child(1) {
     animation: myAnim 0.05s ease-in-out 0.05s 1 normal forwards;
     position: absolute;
@@ -307,6 +308,7 @@ video {
     }
 }
 
+/*animation du bouton entrer*/
 a.enter {
     animation: myAnim 0.25s ease-in-out 3.35s 1 normal forwards;
     text-decoration: none;
@@ -343,19 +345,51 @@ a.enter {
         box-shadow: none;
     }
 }
-.text1{
-    color:#ffd6d6 ;
+
+.text1 {
+    color: #ffd6d6;
     position: absolute;
     top: 30%;
     left: 50%;
     z-index: 3;
     font-size: large;
 }
-.text2{
-    color:#ffd6d6 ;
+
+.text2 {
+    color: #ffd6d6;
     position: absolute;
     top: 40%;
     left: 50%;
     z-index: 3;
     font-size: large;
+}
+
+/*module formulaire de la page d'inscription*/
+form {
+    position: absolute;
+    top: 35%;
+    left: 45%;
+    z-index: 2;
+    color: #ffd6d6;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    box-shadow: 0 0 8px #fff,
+    inset 0 0 8px #fff,
+    0 0 16px #37f713,
+    inset 0 0 16px #37f713,
+    0 0 32px #37f713,
+    inset 0 0 32px #37f713;
+    border: 4px solid #fff;
+    border-radius: 15px;
+}
+
+input {
+    background-color: red;
+    border-radius: 15px;
+    text-shadow: 0 0 16px #ffd6d6,
+    0 0 16px #ffd6d6;
+    box-shadow: 0 0 8px #fff,
+    inset 0 0 8px #fff,
+    0 0 32px;
 }

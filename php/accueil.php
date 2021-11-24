@@ -3,7 +3,6 @@ session_start();
 $connect = mysqli_connect("localhost", "root", "", "livreor"); /*connexion a la base*/
 $req= mysqli_query($connect, 'SELECT COUNT(*) AS "count" FROM commentaires');
 $res=mysqli_fetch_all($req);
-var_dump($res);
 ?>
 <!doctype html>
 <html lang="en">

@@ -19,16 +19,6 @@
     <video autoplay muted loop id="myVideo">
         <source src="../asset/video/espace.mov" type="video/mp4">
     </video>
-</main>
-<form action="#" method="post">
-    <label for="login">Nom d'utilisateur</label>
-    <input type="text" name="login">
-    <label for="password">Mot de passe</label>
-    <input type="text" name="password">
-    <label for="confirm"> Confirmation du mot de passe</label>
-    <input type="text" name="confirm">
-    <input type="submit" value="inscription" name="submit" id="submit">
-</form>
 <footer>
 
 </footer>
