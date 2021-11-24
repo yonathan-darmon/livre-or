@@ -31,6 +31,13 @@ video {
     left: 25%;
     z-index: 2;
 }
+.enter:hover {
+    color: red;
+    box-shadow: 0 0 8px #fff,
+    inset 0 0 8px #fff,
+    0 0 32px;
+}
+
 
 .titre span:nth-child(1) {
     animation: myAnim 0.05s ease-in-out 0.05s 1 normal forwards;
@@ -335,4 +342,20 @@ a.enter {
         text-shadow: none;
         box-shadow: none;
     }
+}
+.text1{
+    color:#ffd6d6 ;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    z-index: 3;
+    font-size: large;
+}
+.text2{
+    color:#ffd6d6 ;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    z-index: 3;
+    font-size: large;
 }
