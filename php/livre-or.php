@@ -5,9 +5,13 @@ if (isset($_POST['deco'])) {
     session_destroy();
 }
 $connect = mysqli_connect("localhost", "root", "", "livreor"); /*connexion a la base*/
-$req= mysqli_query($connect,"SELECT commentaires FROM commentaires");
-$res=mysqli_fetch_all($req);
-var_dump($res);
+$req= mysqli_query($connect,"SELECT commentaire,id_utilisateur AS 'id'  FROM commentaires");
+$res=mysqli_fetch_all($req, MYSQLI_ASSOC);
+$req2=mysqli_query($connect, "SELECT login FROM utilisateurs WHERE id='$id'");
+$res2=mysqli_fetch_all($req2);
+for($i=0;isset($res[$i]);$i++){
+    var_dump($res[$i]);
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -18,6 +22,7 @@ var_dump($res);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../asset/css/index.css">
     <link rel="stylesheet" href="../asset/css/header.css">
+    <link rel="stylesheet" href="../asset/css/accueil.css">
     <title>Document</title>
 </head>
 <body>
@@ -33,7 +38,8 @@ var_dump($res);
         if (isset($_SESSION['login'])){
             echo "<a href='commentaires.php'>Ajoutez un commentaire</a>";
         }
-        echo "<thead><tr>";
+        echo "<thead><tr></tr>"
+      /*  echo "<thead><tr>";
         foreach ($res[0] as $key => $value) {
             echo " <th>$key</th>";
         }
@@ -49,7 +55,7 @@ var_dump($res);
             }
             echo "</tr>";
         }
-        echo "</tbody>";
+        echo "</tbody>";*/
 
         ?>
 

@@ -1,13 +1,18 @@
 <?php
 session_start();
+$log=$_SESSION['login'];
+$mdp=$_SESSION['password'];
+$connect = mysqli_connect("localhost", "root", "", "livreor"); /*connexion a la base*/
+$req2=mysqli_query($connect,"SELECT id FROM utilisateurs WHERE login='$log' AND password='$mdp'");
+$res2=mysqli_fetch_all($req2,MYSQLI_ASSOC);
+$id=$res2[0]['id'];
 if (isset($_POST['deco'])) {
     header("location:../index.php");
     session_destroy();
 }
 if (isset($_POST['send'])){
-    $connect = mysqli_connect("localhost", "root", "", "livreor"); /*connexion a la base*/
     $text=$_POST['textarea'];
-    $req=mysqli_query($connect,"INSERT INTO `commentaires`(commentaire, date) VALUES ($text,GETDATE())");
+    $req=mysqli_query($connect,"INSERT INTO `commentaires`(commentaire, date, id_utilisateur) VALUES ($text,GETDATE(),$id)");
 }
 ?>
 <!doctype html>
