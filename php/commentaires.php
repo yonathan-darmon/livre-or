@@ -1,4 +1,14 @@
 <?php
+session_start();
+if (isset($_POST['deco'])) {
+    header("location:../index.php");
+    session_destroy();
+}
+if (isset($_POST['send'])){
+    $connect = mysqli_connect("localhost", "root", "", "livreor"); /*connexion a la base*/
+    $text=$_POST['textarea'];
+    $req=mysqli_query($connect,"INSERT INTO `commentaires`(commentaire, date) VALUES ($text,GETDATE())");
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -19,8 +29,14 @@
     <video autoplay muted loop id="myVideo">
         <source src="../asset/video/espace.mov" type="video/mp4">
     </video>
-<footer>
+    <form action="#" method="post">
+    <textarea name="textarea"
+              rows="5" cols="30"
+              maxlength="255">Vous pouvez écrire ici.</textarea>
+        <input type="submit" name="send" value="ajouter un commentaire">
+    </form>
+    <footer>
 
-</footer>
+    </footer>
 </body>
 </html>

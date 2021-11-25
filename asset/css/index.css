@@ -345,7 +345,14 @@ a.enter {
         box-shadow: none;
     }
 }
-
+.text0{
+    color: #ffd6d6;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    z-index: 3;
+    font-size: large;
+}
 .text1 {
     color: #ffd6d6;
     position: absolute;
@@ -359,6 +366,14 @@ a.enter {
     color: #ffd6d6;
     position: absolute;
     top: 40%;
+    left: 50%;
+    z-index: 3;
+    font-size: large;
+}
+.text3{
+    color: #ffd6d6;
+    position: absolute;
+    top: 50%;
     left: 50%;
     z-index: 3;
     font-size: large;
@@ -392,4 +407,148 @@ input {
     box-shadow: 0 0 8px #fff,
     inset 0 0 8px #fff,
     0 0 32px;
+}
+
+form a {
+    text-decoration: none;
+    color: #ffd6d6;
+    padding-left: 20px;
+}
+
+form a:hover {
+    box-shadow: 0 0 8px #fff,
+    inset 0 0 8px #fff,
+    0 0 16px red,
+    inset 0 0 16px red;
+}
+
+label {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+h1 .error {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    color: #ffd6d6;
+}
+
+@media (max-width: 862px) {
+    .titre {
+        color: antiquewhite;
+        position: absolute;
+        top: 25%;
+        left: 0%;
+        z-index: 2;
+    }
+
+    .titre span:nth-child(20) {
+        position: absolute;
+        top: 50px;
+        left: 0px;
+        opacity: 0;
+
+    }
+
+    .titre span:nth-child(21) {
+        position: absolute;
+        top: 50px;
+        left: 15px;
+        opacity: 0;
+
+    }
+
+    .titre span:nth-child(22) {
+        position: absolute;
+        top: 50px;
+        left: 20px;
+        opacity: 0;
+
+    }
+
+    .titre span:nth-child(23) {
+        position: absolute;
+        top: 50px;
+        left: 35px;
+        opacity: 0;
+
+    }
+
+    .titre span:nth-child(24) {
+        position: absolute;
+        top: 50px;
+        left: 65px;
+        opacity: 0;
+
+    }
+
+    .titre span:nth-child(25) {
+        position: absolute;
+        top: 50px;
+        left: 80px;
+        opacity: 0;
+
+    }
+
+    .titre span:nth-child(26) {
+        position: absolute;
+        top: 50px;
+        left: 105px;
+        opacity: 0;
+
+    }
+
+    .titre span:nth-child(27) {
+        position: absolute;
+        top: 50px;
+        left: 115px;
+        opacity: 0;
+
+    }
+
+    .titre span:nth-child(28) {
+        position: absolute;
+        top: 50px;
+        left: 145px;
+        opacity: 0;
+    }
+
+    .titre span:nth-child(29) {
+        position: absolute;
+        top: 50px;
+        left: 160px;
+        opacity: 0;
+
+    }
+
+    .titre span:nth-child(30) {
+        position: absolute;
+        top: 50px;
+        left: 175px;
+        opacity: 0;
+
+    }
+
+    .titre span:nth-child(31) {
+        position: absolute;
+        top: 50px;
+        left: 190px;
+        opacity: 0;
+
+    }
+
+    .titre span:nth-child(32) {
+        position: absolute;
+        top: 50px;
+        left: 205px;
+        opacity: 0;
+    }
+
+    a.enter {
+        top: 55%;
+        left: 35%;
+
+    }
+
 }

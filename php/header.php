@@ -6,12 +6,23 @@
         <li><a href="https://github.com/yonathan-darmon/livre-or">Contact</a></li>
         <?php
         if (isset($_SESSION['login'])) {
-            echo "<li><a href='#'>Ajout d'un commentaire</a></li>";
+
+            $deco="<form action='#' method='post'><input type='submit' name='deco' value='deconnexion'></form>";
+            if ($_SESSION['login'] == 'admin' && $_SESSION['password'] == 'admin') {
+
+                echo "<li ><a href = '#' > Admin</a ></li > ";
+            }
+
         } else {
             echo "";
         }
         ?>
+
     </ul>
+    <?php
+    if (isset($deco)){
+        echo $deco;
+    }
+    ?>
 
 </nav>
-

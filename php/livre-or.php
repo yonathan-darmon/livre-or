@@ -1,4 +1,13 @@
 <?php
+session_start();
+if (isset($_POST['deco'])) {
+    header("location:../index.php");
+    session_destroy();
+}
+$connect = mysqli_connect("localhost", "root", "", "livreor"); /*connexion a la base*/
+$req= mysqli_query($connect,"SELECT commentaires FROM commentaires");
+$res=mysqli_fetch_all($req);
+var_dump($res);
 ?>
 <!doctype html>
 <html lang="en">
@@ -19,6 +28,32 @@
     <video autoplay muted loop id="myVideo">
         <source src="../asset/video/espace.mov" type="video/mp4">
     </video>
+<table>
+        <?php
+        if (isset($_SESSION['login'])){
+            echo "<a href='commentaires.php'>Ajoutez un commentaire</a>";
+        }
+        echo "<thead><tr>";
+        foreach ($res[0] as $key => $value) {
+            echo " <th>$key</th>";
+        }
+        echo "</tr>";
+        echo "</thead>";
+        echo "</tbody>";
+
+        foreach ($res as $key => $value) {
+            echo "<tr>";
+            foreach ($value as $value2) {
+
+                echo "<td>$value2</td>";
+            }
+            echo "</tr>";
+        }
+        echo "</tbody>";
+
+        ?>
+
+    </table>
 </main>
 <footer>
 

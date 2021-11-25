@@ -1,16 +1,22 @@
 <?php
 session_start();
-$connect = mysqli_connect("localhost", "root", "", "livreor"); /*connexion a la base*/
-
-
-if (isset($_POST['submit'])) {
-    $_SESSION['login'] = $_POST['login'];
-    $_SESSION['mdp'] = $_POST['password'];
-    $login = $_POST['login'];
-    $mdp = $_POST['password'];
-    $insert = "INSERT INTO `utilisateurs`(login, password) VALUES('$login', '$mdp')";
-    $req = mysqli_query($connect, $insert);
-    header("location:connexion.php");
+if (isset($_POST['deco'])) {
+    header("location:../index.php");
+    session_destroy();
+}
+require "function.php";
+if (isset($_POST['submit']) && $_POST['password'] == $_POST['confirm']) {
+    if ($_POST['password'] == $value['password'] && $_POST['login'] == $value['login']) {
+        $error = '<h3 class="error"> Utilisateur existant</h3>';
+    } elseif (empty($_POST['login'] || empty($_POST['password']) || empty($_POST['confirm']))) {
+        $empty = '<h3>Veuillez remplir tout les champs</h3>';
+    } else {
+        $login = $_POST['login'];
+        $mdp = $_POST['password'];
+        $insert = "INSERT INTO `utilisateurs`(login, password) VALUES('$login', '$mdp')";
+        $req = mysqli_query(connectiondd(), $insert);
+        header("location:connexion.php");
+    }
 
 }
 ?>
@@ -42,6 +48,18 @@ if (isset($_POST['submit'])) {
     <label for="confirm"> Confirmation du mot de passe</label>
     <input type="password" name="confirm">
     <input type="submit" value="inscription" name="submit" id="submit">
+    <?php
+    if (isset($_POST['submit']) && $_POST['password'] != $_POST['confirm']) {
+        echo '<h3>mot de passe errone</h3>';
+    }
+    if (isset($error)) {
+        echo $error;
+    }
+    if (isset($empty)) {
+        echo $empty;
+    }
+
+    ?>
 </form>
 <footer>
 
