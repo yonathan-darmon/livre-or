@@ -1,5 +1,5 @@
 <?php
-session_start()
+session_start();
 if (isset($_POST['deco'])) {
     header("location:index.php");
     session_destroy();
