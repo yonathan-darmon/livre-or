@@ -9,17 +9,22 @@ if (isset($_POST['submit'])) {
     $login = $_POST['login'];
     $mdp = $_POST['mdp'];
     $req = mysqli_query($connect, "SELECT * FROM `utilisateurs`");
-    $res = mysqli_fetch_all($req,MYSQLI_ASSOC);
+    $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
     foreach ($res as $key => $value) { /*on parcours les donnée de la bdd*/
-        if ($value['login'] == $login && $value['password'] == $mdp) {/* si le mot de passe et le login sont les memes*/
+        if ($value['login'] != $login || $value['password'] != $mdp) {
+            $error = 'Verifiez votre Login et Mot de passe';
+        } elseif ($value['login'] == $login && $value['password'] == $mdp) {/* si le mot de passe et le login sont les memes*/
             $_SESSION['login'] = $login;
             $_SESSION['password'] = $mdp;
 
             header("location:accueil.php");
             exit;
         }
+
+
     }
 }
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -47,9 +52,10 @@ if (isset($_POST['submit'])) {
         <input type="password" name="mdp">
         <input type="submit" velue="Bienvenue" name="submit">
         <?php
-        if (isset($verif)) {
-            echo $verif;
+        if (isset($error)) {
+            echo $error;
         }
+
         ?>
         <a class="insc" href="inscription.php">Pas encore inscrit?</a>
     </form>

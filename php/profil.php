@@ -1,8 +1,34 @@
 <?php
 session_start();
 if (isset($_POST['deco'])) {
-    header("location:index.php");
+    header("location:../index.php");
     session_destroy();
+}
+if (isset($_SESSION['login'])){
+    $id=$_SESSION['login'];
+}
+require "function.php";
+$result=result();
+
+for ($i=0;isset($result[$i]);$i++){
+    if ($result[$i]['login']==$_SESSION['login']){
+        $log=$_SESSION['login'];
+        $pass=$result[$i]['password'];
+    }
+
+}
+if (isset($_POST['submit']) && $_POST['password'] == $_POST['confirm']) {
+
+    if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_POST['confirm'])) {
+        $empty = '<h3>Veuillez remplir tout les champs</h3>';
+    }
+    else{
+        $login = $_POST['login'];
+        $mdp = $_POST['password'];
+        $update = "UPDATE `utilisateurs` SET `login`='$login',`password`='$mdp' WHERE login='$id'";
+        $req = mysqli_query(connectiondd(), $update);
+    }
+
 }
 ?>
 <!doctype html>
@@ -24,6 +50,27 @@ if (isset($_POST['deco'])) {
     <video autoplay muted loop id="myVideo">
         <source src="../asset/video/espace.mov" type="video/mp4">
     </video>
+    <form action="#" method="post">
+        <label for="login"> Nom d'utilisateur</label>
+        <input type="text" name="login" value="<?php echo $log; ?>">
+        <label for="password">Mot de passe</label>
+        <input type="text" name="password" value="<?php echo $pass;?>">
+        <label for="confirm"> Confirmation du mot de passe</label>
+        <input type="password" name="confirm">
+        <input type="submit" value="modification" name="submit" id="submit">
+        <?php
+        if (isset($_POST['submit']) && $_POST['password'] != $_POST['confirm']) {
+            echo '<h3>mot de passe errone</h3>';
+        }
+        if (isset($error)) {
+            echo $error;
+        }
+        if (isset($empty)) {
+            echo $empty;
+        }
+
+        ?>
+    </form>
 </main>
 <footer>
 
