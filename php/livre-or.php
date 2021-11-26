@@ -38,6 +38,9 @@ $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
          echo "<br/>$commentaires</p>";
     }
     echo "</div>";
+    if (isset($_SESSION['login'])){
+        echo "<a href='commentaires.php'>Vous souhaitez poser votre marque?</a>";
+    }
     ?>
 </main>
 <footer>

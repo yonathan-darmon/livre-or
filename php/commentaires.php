@@ -15,8 +15,6 @@ $id=$res2[0]['id'];
 if (isset($_POST['send'])){
     $text=$_POST['textarea'];
     $req=mysqli_query($connect,"INSERT INTO commentaires(commentaire, date, id_utilisateur) VALUES ('$text',NOW(),'$id')");
-    echo "INSERT INTO commentaires (commentaire, date, id_utilisateur) VALUES ('$text',NOW(),'$id')";
-/*    header("location: commentaires.php");*/
 }
 ?>
 <!doctype html>

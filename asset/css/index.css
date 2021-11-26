@@ -14,7 +14,7 @@ main {
 video {
     left: 0;
     top: 0;
-    height: 100%;
+    height: ;
     width: 100%;
     z-index: 1;
     opacity: 0.8;
@@ -345,7 +345,8 @@ a.enter {
         box-shadow: none;
     }
 }
-.text0{
+
+.text0 {
     color: #ffd6d6;
     position: absolute;
     top: 20%;
@@ -353,6 +354,7 @@ a.enter {
     z-index: 3;
     font-size: large;
 }
+
 .text1 {
     color: #ffd6d6;
     position: absolute;
@@ -370,7 +372,8 @@ a.enter {
     z-index: 3;
     font-size: large;
 }
-.text3{
+
+.text3 {
     color: #ffd6d6;
     position: absolute;
     top: 50%;
@@ -552,7 +555,8 @@ h1 .error {
     }
 
 }
-#deco{
+
+#deco {
     position: absolute;
     z-index: 3;
     top: 50px;
