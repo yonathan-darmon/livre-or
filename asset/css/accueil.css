@@ -1,4 +1,4 @@
-table{
+table {
     position: absolute;
     top: 60%;
     left: 45%;
@@ -17,13 +17,15 @@ table{
     padding-left: 15px;
     padding-right: 15px;
 }
-.login{
-    text-shadow:0 0 16px red;
+
+.login {
+    text-shadow: 0 0 16px red;
     font-size: large;
     padding-top: 15px;
 }
-.content{
-    text-shadow:0 0 16px red;
+
+.content {
+    text-shadow: 0 0 16px red;
     font-size: x-large;
     padding: 25px;
 

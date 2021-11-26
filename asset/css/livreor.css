@@ -1,11 +1,10 @@
 
 .commentaires {
-    min-width:50% ;
-    max-height: 500px;
+    min-width: 50%;
     overflow: scroll;
     position: absolute;
     display: flex;
-    top:25%;
+    top: 25%;
     left: 30%;
     flex-direction: column;
     justify-content: space-around;
@@ -20,12 +19,14 @@
     color: #ffd6d6;
     z-index: 3;
 }
-.commentaires p{
+
+.commentaires p {
     padding: 25px;
     border-bottom: #37f713 solid 2px;
 
 }
-main a{
+
+main a {
     position: absolute;
     top: 40%;
     left: 5%;
@@ -41,8 +42,11 @@ main a{
     text-decoration: none;
     padding: 10px;
     border-radius: 20px;
+    transition: all 330ms ease-in-out;
+
 }
-main a:hover{
+
+main a:hover {
     color: red;
     box-shadow: 0 0 8px #fff,
     inset 0 0 8px #fff,

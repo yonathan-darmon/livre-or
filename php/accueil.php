@@ -5,15 +5,12 @@ if (isset($_POST['deco'])) {
     session_destroy();
 }
 $connect = mysqli_connect("localhost", "root", "", "livreor"); /*connexion a la base*/
-$req = mysqli_query($connect, 'SELECT COUNT(*) AS "count" FROM commentaires');
+$req = mysqli_query($connect, 'SELECT commentaire FROM commentaires');
 $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
-$randomizer = rand(1, $res[0]['count']);
 
-$req2 = mysqli_query($connect, "SELECT commentaire, id_utilisateur AS 'id' FROM commentaires WHERE id='$randomizer'");
-$res2 = mysqli_fetch_all($req2, MYSQLI_ASSOC);
-$id = $res2[0]['id'];
-$req3 = mysqli_query($connect, "SELECT login FROM utilisateurs WHERE id='$id'");
-$res3 = mysqli_fetch_all($req3);
+shuffle($res);
+
+foreach ($res as $key => $value) ;
 
 
 ?>
@@ -55,13 +52,10 @@ $res3 = mysqli_fetch_all($req3);
                 livre
                 d'or</p>
             <p class="text2">Donne nous ton avis sur notre planete et surtout ce que tu voudrais voir changer!</p>
-            <p class="text3">Ils nous ont laissé un message:</p>
+            <p class="text3">Voici les derniers messages:</p>
             <table>
                 <tr>
-                    <td class="login"><?php echo '<u>' . $res3[0][0] . '</u>'; ?></td>
-                </tr>
-                <tr>
-                    <td class="content"><?php echo $res2[0]['commentaire']; ?></td>
+                    <td class="content"><?php echo $value['commentaire']; ?></td>
                 </tr>
             </table>
         </div>

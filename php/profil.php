@@ -4,16 +4,16 @@ if (isset($_POST['deco'])) {
     header("location:../index.php");
     session_destroy();
 }
-if (isset($_SESSION['login'])){
-    $id=$_SESSION['login'];
+if (isset($_SESSION['login'])) {
+    $id = $_SESSION['login'];
 }
 require "function.php";
-$result=result();
+$result = result();
 
-for ($i=0;isset($result[$i]);$i++){
-    if ($result[$i]['login']==$_SESSION['login']){
-        $log=$_SESSION['login'];
-        $pass=$result[$i]['password'];
+for ($i = 0; isset($result[$i]); $i++) {
+    if ($result[$i]['login'] == $_SESSION['login']) {
+        $log = $_SESSION['login'];
+        $pass = $result[$i]['password'];
     }
 
 }
@@ -21,12 +21,19 @@ if (isset($_POST['submit']) && $_POST['password'] == $_POST['confirm']) {
 
     if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_POST['confirm'])) {
         $empty = '<h3>Veuillez remplir tout les champs</h3>';
-    }
-    else{
+        exit;
+
+    } elseif (isLoginInDatabase() == true) {
+        $exist = "Utilisateur existant";
+
+    } else {
         $login = $_POST['login'];
         $mdp = $_POST['password'];
         $update = "UPDATE `utilisateurs` SET `login`='$login',`password`='$mdp' WHERE login='$id'";
         $req = mysqli_query(connectiondd(), $update);
+        $_SESSION['login'] = $_POST['login'];
+        $_SESSION['password'] = $_POST['password'];
+        header("refresh:0");
     }
 
 }
@@ -54,7 +61,7 @@ if (isset($_POST['submit']) && $_POST['password'] == $_POST['confirm']) {
         <label for="login"> Nom d'utilisateur</label>
         <input type="text" name="login" value="<?php echo $log; ?>">
         <label for="password">Mot de passe</label>
-        <input type="text" name="password" value="<?php echo $pass;?>">
+        <input type="text" name="password" value="<?php echo $pass; ?>">
         <label for="confirm"> Confirmation du mot de passe</label>
         <input type="password" name="confirm">
         <input type="submit" value="modification" name="submit" id="submit">
@@ -67,6 +74,9 @@ if (isset($_POST['submit']) && $_POST['password'] == $_POST['confirm']) {
         }
         if (isset($empty)) {
             echo $empty;
+        }
+        if (isset($exist)) {
+            echo $exist;
         }
 
         ?>

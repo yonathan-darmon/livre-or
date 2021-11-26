@@ -6,7 +6,7 @@ if (isset($_POST['deco'])) {
 }
 require "function.php";
 if (isset($_POST['submit']) && $_POST['password'] == $_POST['confirm']) {
-    if (isLoginInDatabase()===true) {
+    if (isLoginInDatabase() === true) {
         $error = '<h3 class="error"> Utilisateur existant</h3>';
     } elseif (empty($_POST['login'] || empty($_POST['password']) || empty($_POST['confirm']))) {
         $empty = '<h3>Veuillez remplir tout les champs</h3>';

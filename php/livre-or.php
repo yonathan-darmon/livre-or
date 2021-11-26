@@ -5,7 +5,7 @@ if (isset($_POST['deco'])) {
     session_destroy();
 }
 $connect = mysqli_connect("localhost", "root", "", "livreor"); /*connexion a la base*/
-$req = mysqli_query($connect, "SELECT commentaires.commentaire,commentaires.date, utilisateurs.login FROM commentaires INNER JOIN utilisateurs ON commentaires.id_utilisateur=utilisateurs.id");
+$req = mysqli_query($connect, "SELECT commentaires.commentaire,commentaires.date, utilisateurs.login FROM commentaires INNER JOIN utilisateurs ON commentaires.id_utilisateur=utilisateurs.id ORDER BY date DESC");
 $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
 ?>
 <!doctype html>
@@ -31,14 +31,15 @@ $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
     <?php
     echo "<div class='commentaires'>";
     for ($i = 0; isset($res[$i]); $i++) {
-         $date=strtotime($res[$i]['date']);
-         $login=$res[$i]['login'];
-         $commentaires=$res[$i]['commentaire'];
-         echo '<p>Posté le '. date("d/m/Y", $date) .' par '. $login;
-         echo "<br/>$commentaires</p>";
+        $date = strtotime($res[$i]['date']);
+        $login = $res[$i]['login'];
+        $commentaires = $res[$i]['commentaire'];
+        $commentaires = htmlentities($commentaires);
+        echo '<p>Posté le ' . date("d/m/Y", $date) . ' par ' . $login;
+        echo "<br/>$commentaires</p>";
     }
     echo "</div>";
-    if (isset($_SESSION['login'])){
+    if (isset($_SESSION['login'])) {
         echo "<a href='commentaires.php'>Vous souhaitez poser votre marque?</a>";
     }
     ?>

@@ -14,10 +14,7 @@
             echo "  <li><a href='profil.php'>Mes informations</a></li>";
 
             $deco = "<form action='#' method='post' id='deco'><input type='submit' name='deco' value='deconnexion'></form>";
-            if ($_SESSION['login'] == 'admin' && $_SESSION['password'] == 'admin') {
 
-                echo "<li ><a href = '#' > Admin</a ></li > ";
-            }
 
         } else {
             echo "";
