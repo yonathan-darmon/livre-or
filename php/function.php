@@ -18,4 +18,13 @@ function result()
     return $res;
 }
 
-foreach (result() as $key => $value) ;
+result();
+function isLoginInDatabase()
+{
+    foreach (result() as $key => $value) {
+        if ($_POST['login'] === $value['login']) {
+            return true;
+        }
+    }
+    return false;
+}

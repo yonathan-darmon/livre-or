@@ -5,10 +5,8 @@ if (isset($_POST['deco'])) {
     session_destroy();
 }
 $connect = mysqli_connect("localhost", "root", "", "livreor"); /*connexion a la base*/
-$req = mysqli_query($connect, "SELECT comentaire.commentaires, login.utilisateurs FROM commentaires INNER JOIN utilisateurs ON commentaires.id_utilisateur=utilisateurs.id");
+$req = mysqli_query($connect, "SELECT commentaires.commentaire,commentaires.date, utilisateurs.login FROM commentaires INNER JOIN utilisateurs ON commentaires.id_utilisateur=utilisateurs.id");
 $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
-
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -19,7 +17,7 @@ $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../asset/css/index.css">
     <link rel="stylesheet" href="../asset/css/header.css">
-    <link rel="stylesheet" href="../asset/css/accueil.css">
+    <link rel="stylesheet" href="../asset/css/livreor.css">
     <title>Document</title>
 </head>
 <body>
@@ -31,9 +29,15 @@ $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
         <source src="../asset/video/espace.mov" type="video/mp4">
     </video>
     <?php
+    echo "<div class='commentaires'>";
     for ($i = 0; isset($res[$i]); $i++) {
-        echo "<p class='comentaires[$i]'>$res[$i]['commentaire']</p>";
+         $date=strtotime($res[$i]['date']);
+         $login=$res[$i]['login'];
+         $commentaires=$res[$i]['commentaire'];
+         echo '<p>Posté le '. date("d/m/Y", $date) .' par '. $login;
+         echo "<br/>$commentaires</p>";
     }
+    echo "</div>";
     ?>
 </main>
 <footer>

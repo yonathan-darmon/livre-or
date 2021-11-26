@@ -552,3 +552,9 @@ h1 .error {
     }
 
 }
+#deco{
+    position: absolute;
+    z-index: 3;
+    top: 50px;
+    left: 47%;
+}
