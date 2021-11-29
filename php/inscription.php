@@ -39,28 +39,29 @@ if (isset($_POST['submit']) && $_POST['password'] == $_POST['confirm']) {
     <video autoplay muted loop id="myVideo">
         <source src="../asset/video/espace.mov" type="video/mp4">
     </video>
-</main>
-<form action="#" method="post">
-    <label for="login"> Nom d'utilisateur</label>
-    <input type="text" name="login">
-    <label for="password">Mot de passe</label>
-    <input type="password" name="password">
-    <label for="confirm"> Confirmation du mot de passe</label>
-    <input type="password" name="confirm">
-    <input type="submit" value="inscription" name="submit" id="submit">
-    <?php
-    if (isset($_POST['submit']) && $_POST['password'] != $_POST['confirm']) {
-        echo '<h3>mot de passe errone</h3>';
-    }
-    if (isset($error)) {
-        echo $error;
-    }
-    if (isset($empty)) {
-        echo $empty;
-    }
+    <form action="#" method="post">
+        <label for="login"> Nom d'utilisateur</label>
+        <input type="text" name="login">
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password">
+        <label for="confirm"> Confirmation du mot de passe</label>
+        <input type="password" name="confirm">
+        <input type="submit" value="inscription" name="submit" id="submit">
+        <?php
+        if (isset($_POST['submit']) && $_POST['password'] != $_POST['confirm']) {
+            echo '<h3>mot de passe errone</h3>';
+        }
+        if (isset($error)) {
+            echo $error;
+        }
+        if (isset($empty)) {
+            echo $empty;
+        }
 
-    ?>
-</form>
+        ?>
+    </form>
+</main>
+
 <footer>
 
 </footer>

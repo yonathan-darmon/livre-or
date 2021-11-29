@@ -1,10 +1,10 @@
 
 .commentaires {
     min-width: 50%;
-    overflow: scroll;
+    height: 70%;
     position: absolute;
-    display: flex;
-    top: 25%;
+    overflow: scroll;
+    top: 15%;
     left: 30%;
     flex-direction: column;
     justify-content: space-around;
@@ -21,8 +21,8 @@
 }
 
 .commentaires p {
-    padding: 25px;
-    border-bottom: #37f713 solid 2px;
+    border-bottom: #37f713 solid 1px;
+    padding: 15px;
 
 }
 
@@ -51,4 +51,17 @@ main a:hover {
     box-shadow: 0 0 8px #fff,
     inset 0 0 8px #fff,
     0 0 32px;
+}
+
+@media (max-width: 862px) {
+    .commentaires {
+        min-width: 50%;
+        overflow: scroll;
+        position: absolute;
+        display: flex;
+        top: 25%;
+        left: 30%;
+
+    }
+
 }
