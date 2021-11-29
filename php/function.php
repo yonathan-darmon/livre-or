@@ -1,7 +1,7 @@
 <?php
 function connectiondd()
 {
-    $connect = mysqli_connect("localhost", "root", "", "livreor"); /*connexion a la base*/
+    $connect = mysqli_connect("localhost:3306", "yoni", "Marseille,13", "yonathan-darmon_livreor"); /*connexion a la base*/
     return $connect;
 }
 
