@@ -4,8 +4,8 @@ if (isset($_POST['deco'])) {
     header("location:../index.php");
     session_destroy();
 }
-$connect = mysqli_connect("localhost", "root", "", "livreor"); /*connexion a la base*/
-$req = mysqli_query($connect, "SELECT commentaires.commentaire,commentaires.date, utilisateurs.login FROM commentaires INNER JOIN utilisateurs ON commentaires.id_utilisateur=utilisateurs.id ORDER BY date DESC");
+require "function.php";
+$req = mysqli_query( connectiondd(), "SELECT commentaires.commentaire,commentaires.date, utilisateurs.login FROM commentaires INNER JOIN utilisateurs ON commentaires.id_utilisateur=utilisateurs.id ORDER BY date DESC");
 $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
 ?>
 <!doctype html>

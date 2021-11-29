@@ -6,19 +6,18 @@ if (isset($_POST['deco'])) {
     session_destroy();
 }
 require "function.php";
-$connect = connectiondd();
 
 $log = $_SESSION['login'];
 $mdp = $_SESSION['password'];
 
-$req2 = mysqli_query($connect, "SELECT id FROM utilisateurs WHERE login='$log' AND password='$mdp'");
+$req2 = mysqli_query(connectiondd(), "SELECT id FROM utilisateurs WHERE login='$log' AND password='$mdp'");
 $res2 = mysqli_fetch_all($req2, MYSQLI_ASSOC);
 $id = $res2[0]['id'];
 
 if (isset($_POST['send'])) {
     $text = $_POST['textarea'];
     $text = addslashes($text);
-    $req = mysqli_query($connect, "INSERT INTO commentaires(commentaire, date, id_utilisateur) VALUES ('$text',NOW(),'$id')");
+    $req = mysqli_query(connectiondd(), "INSERT INTO commentaires(commentaire, date, id_utilisateur) VALUES ('$text',NOW(),'$id')");
 }
 
 ?>

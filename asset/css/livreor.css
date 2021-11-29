@@ -65,3 +65,21 @@ main a:hover {
     }
 
 }
+@media (max-width: 1049px) and (min-width: 862px) {
+    main a {
+
+        top: 90%;
+        left: 30%;
+
+
+    }
+}
+@media (max-width: 861px) {
+    main a {
+
+        top: 15%;
+        left: 30%;
+
+
+    }
+}

@@ -4,11 +4,11 @@ if (isset($_POST['deco'])) {
     header("location:../index.php");
     session_destroy();
 }
-$connect = mysqli_connect("localhost", "root", "", "livreor"); /*connexion a la base*/
+require "function.php";
 if (isset($_POST['submit'])) {
     $login = $_POST['login'];
     $mdp = $_POST['mdp'];
-    $req = mysqli_query($connect, "SELECT * FROM `utilisateurs`");
+    $req = mysqli_query(connectiondd(), "SELECT * FROM `utilisateurs`");
     $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
     foreach ($res as $key => $value) { /*on parcours les donnée de la bdd*/
         if ($value['login'] != $login || $value['password'] != $mdp) {

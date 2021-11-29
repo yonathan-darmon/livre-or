@@ -4,8 +4,8 @@ if (isset($_POST['deco'])) {
     header("location:../index.php");
     session_destroy();
 }
-$connect = mysqli_connect("localhost", "root", "", "livreor"); /*connexion a la base*/
-$req = mysqli_query($connect, 'SELECT commentaire FROM commentaires');
+require "function.php";
+$req = mysqli_query(connectiondd(), 'SELECT commentaire FROM commentaires');
 $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
 
 shuffle($res);
